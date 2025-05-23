@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Language Identifier</title>
+    <style>
+        body {
+            background-color: #f4f8fb;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 40px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #1a73e8;
+        }
+
+        p {
+            font-size: 18px;
+            color: #333;
+        }
+
+        textarea {
+            width: 80%;
+            height: 150px;
+            font-size: 16px;
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            resize: none;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #1a73e8;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #155ec5;
+        }
+
+        #output {
+            margin-top: 30px;
+            font-size: 20px;
+            color: #1a73e8;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>🌍 Language Identifier</h1>
+    <p>Enter some text and click the button to detect the language.</p>
+    <textarea id="textInput" placeholder="Type or paste text here..."></textarea><br>
+    <button onclick="detectLanguage()">Detect Language</button>
+
+    <div id="output"></div>
+
+    <script>
+        // Demo only: simulate detection (in real case, connect to backend API)
+        function detectLanguage() {
+            const input = document.getElementById("textInput").value.trim();
+            const output = document.getElementById("output");
+
+            if (input === "") {
+                output.innerHTML = "❗ Please enter some text.";
+                output.style.color = "red";
+                return;
+            }
+
+            // Simulated results
+            if (input.startsWith("Hola")) {
+                output.innerHTML = "Detected Language: Spanish 🇪🇸";
+            } else if (input.startsWith("Bonjour")) {
+                output.innerHTML = "Detected Language: French 🇫🇷";
+            } else if (input.startsWith("Hello")) {
+                output.innerHTML = "Detected Language: English 🇬🇧";
+            } else {
+                output.innerHTML = "Detected Language: Unknown";
+            }
+            output.style.color = "#1a73e8";
+        }
+    </script>
+</body>
+</html>
